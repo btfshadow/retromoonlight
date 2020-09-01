@@ -1,12 +1,13 @@
 #!/bin/bash
+rpiversion=`head -1 /etc/apt/sources.list | cut -d " " -f3`
 
 echo -e "\nAdding Moonlight to Sources List..."
 
-if grep -q "deb http://archive.itimmer.nl/raspbian/moonlight stretch main" /etc/apt/sources.list; then
+if grep -q "deb http://archive.itimmer.nl/raspbian/moonlight $rpiversion main" /etc/apt/sources.list; then
     echo -e "NOTE: Moonlight Source Exists - Skipping"
 else
     echo -e "Adding Moonlight to Sources List"
-    echo "deb http://archive.itimmer.nl/raspbian/moonlight stretch main" >> /etc/apt/sources.list
+    echo "deb http://archive.itimmer.nl/raspbian/moonlight $rpiversion main" >> /etc/apt/sources.list
 fi
 
 echo -e "\nFetching and installing the GPG key....\n"
