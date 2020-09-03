@@ -18,7 +18,7 @@ case $NUM in
     1)
         sudo bash ./Scripts/Install_moonlight.sh
         sudo bash ./Scripts/Pair_moonlight.sh
-        sudo bash ./Scripts/Install_moonlight_menu.sh
+        sudo bash ./Scripts/Install_menus.sh
         sudo bash ./Scripts/Install_Scripts.sh
         sudo bash ./Scripts/Install_themes.sh	
         ;;
@@ -31,7 +31,7 @@ case $NUM in
         sudo bash ./Install.sh
         ;;
     4)
-        sudo bash ./Scripts/Install_moonlight_menu.sh
+        sudo bash ./Scripts/Install_menus.sh
         sudo bash ./Install.sh
         ;;	
     5) 
