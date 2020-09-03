@@ -21,7 +21,7 @@ case $NUM in
         sudo bash ./Scripts/Install_menus.sh
         sudo bash ./Scripts/Install_Scripts.sh
         sudo bash ./Scripts/Install_themes.sh	
-        sudo bash ./Script/Install_plex.sh
+        sudo bash ./Scripts/Install_plex.sh
         ;;
     2)
         sudo bash ./Scripts/Install_moonlight.sh
