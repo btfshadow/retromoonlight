@@ -52,7 +52,8 @@ mkdir -p ~/RetroPie/roms/plex
 chmod -x ~/RetroPie/roms/plex/launch_plex.sh
 ############################################################
 
-#nano /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
+mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps
+/bin/cp ./gamepad/steel-series-duo.json /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
 
 ############################################################
 echo -e "\nInstalling Plex Theme For Carbon"
