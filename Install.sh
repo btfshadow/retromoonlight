@@ -12,6 +12,7 @@ echo -e " * 5: Install Moonlight Refresh Script in RetroPie"
 echo -e " * 6: Install Moonlight themes"
 echo -e " * 7: Remove Launch Scripts"
 echo -e " * 8: Install Plex"
+echo -e " * 9: Exit"
 
 read NUM
 case $NUM in 
@@ -51,7 +52,8 @@ case $NUM in
     8)
         sudo bash ./Scripts/Install_plex.sh
         sudo bash ./Install.sh
-    8)
+        ;;
+    9)
         exit 1
         ;;		
     *) echo "INVALID NUMBER!" ;;
