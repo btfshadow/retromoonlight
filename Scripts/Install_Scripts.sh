@@ -12,6 +12,7 @@ mkdir -p /home/pi/RetroPie/roms/moonlight
 chmod a+x ./Scripts/Refresh.sh
 /bin/cp ./Scripts/Refresh.sh /home/pi/RetroPie/roms/moonlight/Refresh.sh
 /bin/cp ./GenerateGamesList.py /home/pi/RetroPie/roms/moonlight/GenerateGamesList.py
+/bin/cp ./Force_Quit.sh /home/pi/RetroPie/roms/moonlight/Force_Quit.sh
 
 chmod 777 /home/pi/RetroPie/roms/moonlight
 
