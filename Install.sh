@@ -11,7 +11,7 @@ echo -e " * 4: Install Moonlight Menu in RetroPie"
 echo -e " * 5: Install Moonlight Refresh Script in RetroPie"
 echo -e " * 6: Install Moonlight themes"
 echo -e " * 7: Remove Launch Scripts"
-echo -e " * 8: Exit"
+echo -e " * 8: Install Plex"
 
 read NUM
 case $NUM in 
@@ -21,6 +21,7 @@ case $NUM in
         sudo bash ./Scripts/Install_menus.sh
         sudo bash ./Scripts/Install_Scripts.sh
         sudo bash ./Scripts/Install_themes.sh	
+        sudo bash ./Script/Install_plex.sh
         ;;
     2)
         sudo bash ./Scripts/Install_moonlight.sh
@@ -47,6 +48,9 @@ case $NUM in
         rm -rf /home/pi/RetroPie/roms/moonlight	
         sudo bash ./Install.sh
         ;;
+    8)
+        sudo bash ./Scripts/Install_plex.sh
+        sudo bash ./Install.sh
     8)
         exit 1
         ;;		
