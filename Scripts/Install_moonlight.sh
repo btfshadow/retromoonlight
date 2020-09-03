@@ -26,4 +26,6 @@ apt-get update -y
 
 echo -e "\nInstalling Moonlight..."
 apt-get install moonlight-embedded -y
+echo -e "\nInstalling Gamepad..."
+/bin/cat ./gamepad/steel-series-duo.txt >> /usr/share/moonlight/gamecontrollerdb.txt
 echo -e "\nMoonlight Installed!"
