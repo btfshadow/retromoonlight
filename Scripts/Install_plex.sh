@@ -52,8 +52,8 @@ mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps
 #########
 mkdir -p /home/pi/RetroPie/roms/plex
 #make .sh to launch plex
-/bin/cp ./Scripts/launch_plex.sh /home/pi/RetroPie/roms/plex/launch_plex.sh
-chmod -x /home/pi/RetroPie/roms/plex/launch_plex.sh
+sudo /bin/cp ./Scripts/launch_plex.sh /home/pi/RetroPie/roms/plex/launch_plex.sh
+sudo chmod -x /home/pi/RetroPie/roms/plex/launch_plex.sh
 
 ############################################################
 echo -e "\nInstalling Plex Theme For Carbon"
