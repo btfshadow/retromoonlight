@@ -46,10 +46,10 @@ make -j$(nproc)
 sudo make install
 
 #########
-mkdir -p ~/RetroPie/roms/plex
+mkdir -p /home/pi/RetroPie/roms/plex
 #make .sh to launch plex
-/bin/cp ./Scripts/launch_plex.sh ~/RetroPie/roms/plex/launch_plex.sh
-chmod -x ~/RetroPie/roms/plex/launch_plex.sh
+/bin/cp ./Scripts/launch_plex.sh /home/pi/RetroPie/roms/plex/launch_plex.sh
+chmod -x /home/pi/RetroPie/roms/plex/launch_plex.sh
 ############################################################
 
 mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps
