@@ -39,21 +39,21 @@ echo -e "\nCompiling Plex"
 
 cd ~
 git clone https://github.com/plexinc/plex-media-player
-mkdir ~/plex-media-player/build
-cd ~/plex-media-player/build
+mkdir ./plex-media-player/build
+cd ./plex-media-player/build
 cmake -DCMAKE_BUILD_TYPE=Debug -DQTROOT=/usr/lib/qt5.12/ -DCMAKE_INSTALL_PREFIX=/usr/local/ ..
 make -j$(nproc)
 sudo make install
+
+### Plex Work with Controller ###
+mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps
+/bin/cp /home/pi/retromoonlight/gamepad/steel-series-duo.json /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
 
 #########
 mkdir -p /home/pi/RetroPie/roms/plex
 #make .sh to launch plex
 /bin/cp ./Scripts/launch_plex.sh /home/pi/RetroPie/roms/plex/launch_plex.sh
 chmod -x /home/pi/RetroPie/roms/plex/launch_plex.sh
-############################################################
-
-mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps
-/bin/cp ./gamepad/steel-series-duo.json /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
 
 ############################################################
 echo -e "\nInstalling Plex Theme For Carbon"
