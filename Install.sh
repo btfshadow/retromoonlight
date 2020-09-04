@@ -33,7 +33,7 @@ case $NUM in
         sudo bash ./Install.sh
         ;;
     4)
-        sudo bash ./Scripts/Install_moonlight_menu.sh
+        sudo bash ./Scripts/Install_menus.sh
         sudo bash ./Install.sh
         ;;	
     5) 
