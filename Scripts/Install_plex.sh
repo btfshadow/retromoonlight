@@ -34,7 +34,7 @@ make -j$(nproc)
 sudo make install
 
 ### Making Plex Accessable via RetroPie ###
-cd /home/pi/
+cd /home/pi
 mkdir -p /home/pi/RetroPie/roms/plex
 
 ### make .sh to launch plex ###
@@ -45,8 +45,7 @@ export XAUTHORITY=/home/pi/.Xauthority
 /usr/local/bin/plexmediaplayer --fullscreen --tv
 ' > /home/pi/RetroPie/roms/plex/launch_plex.sh
 
-sudo chmod a+x /home/pi/RetroPie/roms/plex/launch_plex.sh
-sudo chown -R pi:pi /home/pi/RetroPie/roms/plex
+sudo chmod -x /home/pi/RetroPie/roms/plex/launch_plex.sh
 
 ### Make Plex Accessable via Gamepad  ###
 mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps/
@@ -118,7 +117,27 @@ echo '{
 }
 ' > /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
 
-sudo chown -R pi:pi /home/pi/.local/share/plexmediaplayer
+### 
+
+echo -e "\nCreating New Menus for RetroPie..."
+
+CONFIG=$(<./menu_config.txt)
+DIRECTORY=/home/pi/.emulationstation/es_systems.cfg
+
+if [ -f $DIRECTORY ]
+then	
+    echo -e "Removing Duplicate Systems File"
+    rm $DIRECTORY
+fi
+
+echo -e "Copying Systems Config File"
+cp /etc/emulationstation/es_systems.cfg $DIRECTORY
+
+echo -e "Adding Plex to Systems"
+sed -i -e 's|</systemList>|  <system>\n    <name>plex</name>\n    <fullname>Plex</fullname>\n    <path>~/RetroPie/roms/plex</path>\n    <extension>.sh .SH</extension>\n    <command>/usr/bin/startx ~/RetroPie/roms/plex/launch_plex.sh</command>\n    <platform>pc</platform>\n    <theme>plex</theme>\n  </system>\n</systemList>|g' $DIRECTORY
+
+echo -e "\nPlex menu added to RetroPie..."
+
 
 ### Installing Plex Theme to Carbon ###
 echo -e "\nInstalling Plex Theme For Carbon"
