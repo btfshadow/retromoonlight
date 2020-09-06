@@ -22,7 +22,7 @@ There is already a [solution available](https://github.com/TechWizTime/moonlight
 #### On your raspberry pi: ####
   1. git clone https://github.com/AlphaGeekTech/retromoonlight.git
   2. cd retromoonlight
-  3. sudo bash ./Install.sh. If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
+  3. bash ./Install.sh. If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
   5. Run emulationstation
   
 Once EmulationStation is running, navigate to the Moonlight console, select the "Refresh" rom, then reboot emultationstation after the script is finished.
