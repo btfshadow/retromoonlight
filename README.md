@@ -15,6 +15,8 @@ There is already a [solution available](https://github.com/TechWizTime/moonlight
   * System Memory: 4 GB or higher.
 
 ## Setup ##
+WARNING: Doing a `apt upgrade` will break controller functionality.  Working on solution.
+
 #### On your PC: ####
   1. Install and activate [GeFore Experience](https://www.nvidia.com/en-us/geforce/geforce-experience/)
   2. In GeForce Expereince, go to Shield Settings and enable game streaming.
