@@ -22,9 +22,9 @@ WARNING: Doing a `apt upgrade` will break controller functionality.  Working on 
   2. In GeForce Expereince, go to Shield Settings and enable game streaming.
 
 #### On your raspberry pi: ####
-  `git clone https://github.com/AlphaGeekTech/retromoonlight.git`
-  `cd retromoonlight`
-  `bash ./Install.sh` If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
+  `git clone https://github.com/AlphaGeekTech/retromoonlight.git
+  cd retromoonlight
+  bash ./Install.sh` If a first time install, use option 1. Otherwise you can use the other options to install select components, or remove MoonLight from RetroPie
   
   Run emulationstation
   
