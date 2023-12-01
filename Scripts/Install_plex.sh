@@ -19,37 +19,37 @@ sudo ./install
 sudo ldconfig
 
 ### Install OpenGL Drivers Needed####
-cd /home/pi/
+cd /home/btfshadow/
 wget https://github.com/koendv/qt5-opengl-raspberrypi/releases/download/v5.12.5-1/qt5-opengl-dev_5.12.5_armhf.deb
 sudo apt-get install -y ./qt5-opengl-dev_5.12.5_armhf.deb
 rm qt5-opengl-dev_5.12.5_armhf.deb
 
 ### Compile Plex Media Player (front end) ###
-cd /home/pi/
+cd /home/btfshadow/
 git clone https://github.com/plexinc/plex-media-player
-mkdir /home/pi/plex-media-player/build
-cd /home/pi/plex-media-player/build
+mkdir /home/btfshadow/plex-media-player/build
+cd /home/btfshadow/plex-media-player/build
 cmake -DCMAKE_BUILD_TYPE=Debug -DQTROOT=/usr/lib/qt5.12/ -DCMAKE_INSTALL_PREFIX=/usr/local/ ..
 make -j$(nproc)
 sudo make install
 
 ### Making Plex Accessable via RetroPie ###
-cd /home/pi/
-mkdir -p /home/pi/RetroPie/roms/plex
+cd /home/btfshadow/
+mkdir -p /home/btfshadow/RetroPie/roms/plex
 
 ### make .sh to launch plex ###
 echo '#!/bin/bash
 export DISPLAY=:0.0
 export XDG_SESSION_TYPE=x11
-export XAUTHORITY=/home/pi/.Xauthority
+export XAUTHORITY=/home/btfshadow/.Xauthority
 /usr/local/bin/plexmediaplayer --fullscreen --tv
-' > /home/pi/RetroPie/roms/plex/launch_plex.sh
+' > /home/btfshadow/RetroPie/roms/plex/launch_plex.sh
 
-sudo chmod a+x /home/pi/RetroPie/roms/plex/launch_plex.sh
-sudo chown -R pi:pi /home/pi/RetroPie/roms/plex
+sudo chmod a+x /home/btfshadow/RetroPie/roms/plex/launch_plex.sh
+sudo chown -R pi:pi /home/btfshadow/RetroPie/roms/plex
 
 ### Make Plex Accessable via Gamepad  ###
-mkdir -p /home/pi/.local/share/plexmediaplayer/inputmaps/
+mkdir -p /home/btfshadow/.local/share/plexmediaplayer/inputmaps/
 echo '{
   "name": "Xbox Controller",
   "idmatcher": "SteelSeries Stratus*",
@@ -116,11 +116,11 @@ echo '{
 
   }
 }
-' > /home/pi/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
+' > /home/btfshadow/.local/share/plexmediaplayer/inputmaps/xbox-controller-windows.json
 
-sudo chown -R pi:pi /home/pi/.local/share/plexmediaplayer
+sudo chown -R pi:pi /home/btfshadow/.local/share/plexmediaplayer
 
 ### Installing Plex Theme to Carbon ###
 echo -e "\nInstalling Plex Theme For Carbon"
-sudo /bin/cp -r /home/pi/retromoonlight/themes/carbon/plex /etc/emulationstation/themes/carbon/
+sudo /bin/cp -r /home/btfshadow/retromoonlight/themes/carbon/plex /etc/emulationstation/themes/carbon/
 

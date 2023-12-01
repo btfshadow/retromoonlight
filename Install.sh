@@ -46,7 +46,7 @@ case $NUM in
         ;;
     7)
         echo -e "\nRemoving all Moonlight launch scripts..."
-        rm -rf /home/pi/RetroPie/roms/moonlight	
+        rm -rf /home/btfshadow/RetroPie/roms/moonlight	
         sudo bash ./Install.sh
         ;;
     8)
